@@ -70,7 +70,7 @@
                 </a>
             </td>
             <td width="15%" align="center">
-                <a href="hiws99@naver.com"><img src="https://img.shields.io/static/v1?label=&message=?@gmail.com&color=lightblue&style=flat-square&logo=gmail"></a>
+                <a href="hiws99@naver.com"><img src="https://img.shields.io/static/v1?label=&message=hiws99@naver.com&color=lightblue&style=flat-square&logo=naver"></a>
             </td>
             <td width="20%" align="center"> FrontEnd : iOS</td>
         </tr>  
