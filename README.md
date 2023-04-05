@@ -45,7 +45,7 @@
                 </a>
             </td>
             <td width="15%" align="center">
-                <a href="?@naver.com"><img src="https://img.shields.io/static/v1?label=&message=?@naver.com&color=lightblue&style=flat-square&logo=naver"></a>
+                <a href="rlavlfrb0119@gmail.com"><img src="https://img.shields.io/static/v1?label=&message=?@naver.com&color=lightblue&style=flat-square&logo=naver"></a>
             </td>
             <td width="20%" align="center"> FrontEnd : iOS </td>
         </tr>    
