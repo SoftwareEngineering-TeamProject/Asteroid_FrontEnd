@@ -45,7 +45,7 @@
                 </a>
             </td>
             <td width="15%" align="center">
-                <a href="?@naver.com"><img src="https://img.shields.io/static/v1?label=&message=?@naver.com&color=lightblue&style=flat-square&logo=naver"></a>
+                <a href="rlavlfrb0119@gmail.com"><img src="https://img.shields.io/static/v1?label=&message=rlavlfrb0119@gmail.com&color=lightblue&style=flat-square&logo=gmail"></a>
             </td>
             <td width="20%" align="center"> FrontEnd : iOS </td>
         </tr>    
@@ -70,7 +70,7 @@
                 </a>
             </td>
             <td width="15%" align="center">
-                <a href="hiws99@naver.com"><img src="https://img.shields.io/static/v1?label=&message=?@gmail.com&color=lightblue&style=flat-square&logo=gmail"></a>
+                <a href="hiws99@naver.com"><img src="https://img.shields.io/static/v1?label=&message=hiws99@naver.com&color=lightblue&style=flat-square&logo=naver"></a>
             </td>
             <td width="20%" align="center"> FrontEnd : iOS</td>
         </tr>  
@@ -91,6 +91,10 @@
 </table>
 
 <br>
+
+## 문서
+
+노션 : https://dawn-chiller-112.notion.site/cb969b0870e6495887f3876fffa1a2d7?v=b1de05b7fc0f4b3a87ad21a24af326ed
 <br>
 
 # Astroid-FE
