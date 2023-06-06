@@ -11,7 +11,6 @@
 		28F551A52A2708B90035CF2A /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F551A42A2708B90035CF2A /* ListView.swift */; };
 		28F551A72A2708BA0035CF2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28F551A62A2708BA0035CF2A /* Assets.xcassets */; };
 		28F551AA2A2708BA0035CF2A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28F551A92A2708BA0035CF2A /* Preview Assets.xcassets */; };
-		28F551B42A2709630035CF2A /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F551B32A2709630035CF2A /* ListViewModel.swift */; };
 		28F551B62A27097F0035CF2A /* taskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F551B52A27097F0035CF2A /* taskModel.swift */; };
 		28F551B82A2709B80035CF2A /* ListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F551B72A2709B80035CF2A /* ListRowView.swift */; };
 		28F551BA2A2709F80035CF2A /* addTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F551B92A2709F80035CF2A /* addTaskView.swift */; };
@@ -24,7 +23,6 @@
 		28F551A42A2708B90035CF2A /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		28F551A62A2708BA0035CF2A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		28F551A92A2708BA0035CF2A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		28F551B32A2709630035CF2A /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		28F551B52A27097F0035CF2A /* taskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = taskModel.swift; sourceTree = "<group>"; };
 		28F551B72A2709B80035CF2A /* ListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRowView.swift; sourceTree = "<group>"; };
 		28F551B92A2709F80035CF2A /* addTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addTaskView.swift; sourceTree = "<group>"; };
@@ -82,7 +80,6 @@
 		28F551B02A2709140035CF2A /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				28F551B32A2709630035CF2A /* ListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -182,7 +179,6 @@
 				28F551B82A2709B80035CF2A /* ListRowView.swift in Sources */,
 				28F551BC2A270A0A0035CF2A /* NoTaskView.swift in Sources */,
 				28F551B62A27097F0035CF2A /* taskModel.swift in Sources */,
-				28F551B42A2709630035CF2A /* ListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
