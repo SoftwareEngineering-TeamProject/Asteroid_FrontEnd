@@ -9,16 +9,14 @@ import Foundation
 import SwiftUI
 import Alamofire
 
-struct LoginResponse: Codable {
-    let userId: Int
-    // Add other properties based on your response structure
-}
 
 struct LoginView : View {
     
     @State private var isPopoverVisible = false
     @State private var email: String = ""
     @State private var password: String = ""
+    @State private var showAlert = false
+    @State private var navigateToMyListView = false
     
     var body: some View {
             VStack {
@@ -35,26 +33,27 @@ struct LoginView : View {
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
                 
-                //            Button(action: registerUser) {
-                //                Text("Register")
-                //                    .padding()
-                //                    .background(Color.blue)
-                //                    .foregroundColor(.white)
-                //                    .cornerRadius(8)
-                //            }
                             Button(action: loginUser) {
                                 Text("Login")
                                     .padding()
                                     .background(Color.green)
                                     .foregroundColor(.white)
                                     .cornerRadius(8)
+                            }.alert(isPresented: $showAlert) {
+                                Alert(
+                                    title: Text("Error"),
+                                    message: Text("아이디 혹은 비밀번호가 잘못되었습니다."),
+                                    dismissButton: .default(Text("OK"))
+                                )
                             }
-               NavigationLink( destination: MyListsView()) {
-                    Text("Loginpass")
-                        .padding()
-                        .background(Color.green)
-                        .foregroundColor(.white)
-                        .cornerRadius(8)
+
+               NavigationLink( destination: MyListsView(),isActive: $navigateToMyListView) {
+                   EmptyView()
+                   Text("LoginPass")
+                       .padding()
+                       .background(Color.green)
+                       .foregroundColor(.white)
+                       .cornerRadius(8)
                 }
             }
             .padding()
@@ -62,36 +61,30 @@ struct LoginView : View {
     
 
     
+
     func loginUser() {
-        let parameters: [String: Any] = [
-            "username": email,
+        let url = "https://port-0-asteroid-backend-dihik2mlis5q700.sel4.cloudtype.app/auth/login"
+        let parameters = [
+            "email": email,
             "password": password
-        ]
+        ] as Dictionary
         
-        AF.request("https://port-0-asteroid-backend-dihik2mlis5q700.sel4.cloudtype.app/login",
-                   method: .post,
-                   parameters: parameters,
-                   encoding: JSONEncoding.default)
-            .validate()
-            .responseDecodable(of: LoginResponse.self) { response in
-                switch response.result {
-                case .success(let loginResponse):
-//                    print("Login successful! Token: \(loginResponse.userId)")
-                    print("로그인 성공")
-                    UserDefaults.standard.set(loginResponse.userId, forKey: "userId")
-                    // Handle other properties from the response as needed
-                case .failure(_):
-//                    print("Login failed: \(error)")
-                    print("로그인 실패")
+        AF.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default).validate().responseJSON { response in
+            print(response)
+            switch response.result {
+            case .success(let id):
+                if id is Int {
+                    UserDefaults.standard.set(id, forKey: "userId")
+                    navigateToMyListView = true
                 }
+            case .failure(let error):
+                print(error)
+                // Show an alert for failure
+                showAlert = true
             }
+        }
     }
+
 }
 
-#if DEBUG
-struct LoginView_Previews: PreviewProvider {
-    static var previews: some View {
-        LoginView()
-    }
-}
-#endif
+

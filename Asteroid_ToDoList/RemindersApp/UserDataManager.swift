@@ -9,15 +9,15 @@ import Foundation
 import Alamofire
 
 class UserDataManager {
-    let baseURL = "https://port-0-asteroid-backend-dihik2mlis5q700.sel4.cloudtype.app"
+    let baseURL = "https://port-0-asteroid-backend-dihik2mlis5q700.sel4.cloudtype.app/api"
 
     func getLists() { //MyListView.onApear
         let url = baseURL + "/list/lists"
         
         AF.request(url).responseDecodable(of: [List].self) { response in
             switch response.result {
-            case .success(let lists):
-                print(lists)
+            case .success(_):
+                print(response.result)
             case .failure(let error):
                 print(error)
             }
@@ -28,10 +28,10 @@ class UserDataManager {
         let url = baseURL + "/list/register"
         let parameters: [String: Any] = ["title": title]
         
-        AF.request(url, method: .post, parameters: parameters).responseDecodable(of: List.self) { response in
+        AF.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default).validate().responseJSON { response in
             switch response.result {
-            case .success(let post):
-                print(post)
+            case .success(let listId):
+                print(listId)
             case .failure(let error):
                 print(error)
             }
@@ -63,12 +63,13 @@ class UserDataManager {
     }
     func postTasks(userId: Int, listId : Int, content:String, completed: Bool) { // ReminderListView.NewReminder
         let url = baseURL + "/\(userId)/todo/\(listId)/post"
-        let parameters: [String: Any] = ["content": content, "completed" : completed ]
+        let parameters: [String: Any] = ["listId": listId, "content": content, "completed" : completed ]
         
-        AF.request(url, method: .post, parameters: parameters).responseDecodable(of: List.self) { response in
+        print(userId, listId, content , completed)
+        AF.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default).validate().responseJSON { response in
             switch response.result {
-            case .success(let post):
-                print(post)
+            case .success(let listId):
+                print(listId)
             case .failure(let error):
                 print(error)
             }

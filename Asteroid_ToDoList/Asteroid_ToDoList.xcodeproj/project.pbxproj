@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		28F233742A3DABE100EFA5EF /* ReminderExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F2334C2A3DABE100EFA5EF /* ReminderExtension.swift */; };
 		28F233752A3DABE100EFA5EF /* CoreDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F2334E2A3DABE100EFA5EF /* CoreDataProvider.swift */; };
 		28F233762A3DABE100EFA5EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28F2334F2A3DABE100EFA5EF /* Assets.xcassets */; };
 		28F233772A3DABE100EFA5EF /* UserDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F233502A3DABE100EFA5EF /* UserDataManager.swift */; };
@@ -39,7 +38,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		28F2334C2A3DABE100EFA5EF /* ReminderExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReminderExtension.swift; sourceTree = "<group>"; };
 		28F2334E2A3DABE100EFA5EF /* CoreDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataProvider.swift; sourceTree = "<group>"; };
 		28F2334F2A3DABE100EFA5EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		28F233502A3DABE100EFA5EF /* UserDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDataManager.swift; sourceTree = "<group>"; };
@@ -85,9 +83,7 @@
 		28F2334B2A3DABE100EFA5EF /* RemindersApp */ = {
 			isa = PBXGroup;
 			children = (
-				28F2334C2A3DABE100EFA5EF /* ReminderExtension.swift */,
 				28F2334D2A3DABE100EFA5EF /* Providers */,
-				28F2334F2A3DABE100EFA5EF /* Assets.xcassets */,
 				28F233502A3DABE100EFA5EF /* UserDataManager.swift */,
 				28F233512A3DABE100EFA5EF /* Utils */,
 				28F233542A3DABE100EFA5EF /* Models */,
@@ -200,6 +196,7 @@
 		28F551962A2708B90035CF2A = {
 			isa = PBXGroup;
 			children = (
+				28F2334F2A3DABE100EFA5EF /* Assets.xcassets */,
 				28F2334B2A3DABE100EFA5EF /* RemindersApp */,
 				28F551A02A2708B90035CF2A /* Products */,
 			);
@@ -292,7 +289,6 @@
 				28F233872A3DABE100EFA5EF /* ReminderListView.swift in Sources */,
 				28F233792A3DABE100EFA5EF /* CustomOperators.swift in Sources */,
 				28F233802A3DABE100EFA5EF /* Date+Extensions.swift in Sources */,
-				28F233742A3DABE100EFA5EF /* ReminderExtension.swift in Sources */,
 				28F233892A3DABE100EFA5EF /* MyListCellView.swift in Sources */,
 				28F2338D2A3DABE100EFA5EF /* ReminderService.swift in Sources */,
 				28F2338E2A3DABE100EFA5EF /* LoginView.swift in Sources */,

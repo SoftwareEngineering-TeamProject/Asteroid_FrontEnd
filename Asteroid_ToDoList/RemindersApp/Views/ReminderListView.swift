@@ -101,28 +101,28 @@ struct ReminderListView: View {
                 
             }
             .toolbar {
+
                 ToolbarItem(placement: .confirmationAction) {
-//                    Picker("", selection: $selectedFilter.animation())
-//                    {
-//                        ForEach(TaskFilter.allFilters, id: \.self)
-//                        {
-//                            filter in
-//                            Text(filter.rawValue)
-//                        }
-//                    }
                     Picker("",selection: $status) {
                                     Text("To Do").tag("To Do")
                                     Text("Completed").tag("Completed")
                                 }
                 }
+                
+                
             }
 
             Spacer()
             
             HStack {
                 Image(systemName: "plus.circle.fill")
+                
                 Button("New Reminder") {
                     openAddReminder = true
+                }
+                Spacer()
+                Button("sort"){
+                    print("sort")
                 }
             }.foregroundColor(.blue)
                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -145,6 +145,7 @@ struct ReminderListView: View {
             Button("Cancel", role: .cancel) { }
             Button("Done") {
                 if isFormValid {
+                    print(userId, listId, title)
                     userDataManager.postTasks(userId: userId, listId: listId, content: title, completed: false)
                     do {
                         try ReminderService.saveReminderToMyList(myList: myList, reminderTitle: title)
@@ -160,8 +161,6 @@ struct ReminderListView: View {
         .navigationBarTitleDisplayMode(.large)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
-
-
 }
 
 

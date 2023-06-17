@@ -27,7 +27,7 @@ struct MyListsView: View {
                 } else {
                     List {
                         ForEach(Array(myListResults.enumerated()), id: \.element) {index, myList in
-                            NavigationLink(destination: ReminderListView(myList: myList,listId : index)) {
+                            NavigationLink(destination: ReminderListView(myList: myList,listId : myList.accessibilityElementCount() + index)) {
                                 MyListCellView(myList: myList)
                                     .font(.title3)
                             }

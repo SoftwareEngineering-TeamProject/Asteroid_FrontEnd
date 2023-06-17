@@ -19,6 +19,8 @@ struct RegisterView : View {
     
     @State private var email: String = ""
     @State private var password: String = ""
+    @State private var showAlert = false
+    @State private var navigateToLoginView = false
     
     var body: some View {
         VStack {
@@ -41,34 +43,45 @@ struct RegisterView : View {
                     .background(Color.blue)
                     .foregroundColor(.white)
                     .cornerRadius(8)
+            }.alert(isPresented: $showAlert) {
+                Alert(
+                    title: Text("Error"),
+                    message: Text("아이디 혹은 비밀번호가 잘못되었습니다."),
+                    dismissButton: .default(Text("OK"))
+                )
+            }
+            
+            NavigationLink( destination: LoginView(),isActive: $navigateToLoginView) {
+                EmptyView()
             }
         }
         .padding()
     }
     
     func registerUser() {
+
         let parameters: [String: Any] = [
-            "username": email,
+            "email": email,
             "password": password
         ]
         
-        AF.request("https://port-0-asteroid-backend-dihik2mlis5q700.sel4.cloudtype.app/register",
+        AF.request("https://port-0-asteroid-backend-dihik2mlis5q700.sel4.cloudtype.app/auth/join",
                    method: .post,
                    parameters: parameters,
                    encoding: JSONEncoding.default)
             .validate()
-            .responseDecodable(of: RegisterResponse.self) { response in
+            .responseJSON{ response in
                 switch response.result {
-                case .success(_):
-//                    print("Registration successful! Message: \(registerResponse.userId)")
-                    print("회원가입 성공")
-                    // Handle other properties from the response as needed
-                case .failure(_):
-//                    print("Registration failed: \(error)")
-                    print("회원가입 실패")
+                case .success(let response):
+                    print("Registration successful! Message: \(response)")
+                    navigateToLoginView = true
+                case .failure(let error):
+                    print("Registration failed: \(error)")
+                    showAlert = true
                 }
             }
     }
+
 }
 
 #if DEBUG
