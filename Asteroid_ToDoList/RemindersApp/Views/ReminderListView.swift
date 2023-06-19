@@ -121,8 +121,9 @@ struct ReminderListView: View {
                     openAddReminder = true
                 }
                 Spacer()
-                Button("sort"){
-                    print("sort")
+                Button("날짜 및 시간 순 정렬") {
+                    myList.sortRemindersByDateAndTime()
+                    
                 }
             }.foregroundColor(.blue)
                 .frame(maxWidth: .infinity, alignment: .leading)

@@ -12,12 +12,22 @@ import CoreData
 @objc(MyList)
 public class MyList: NSManagedObject {
 
-    // get the reminders that are not completed
     lazy var remindersByMyListRequest: NSFetchRequest<Reminder> = {
         let request = Reminder.fetchRequest()
-        request.sortDescriptors = []
+        let sortDescriptor = NSSortDescriptor(key: "reminderDate", ascending: true)
+        let secondarySortDescriptor = NSSortDescriptor(key: "reminderTime", ascending: true)
+        request.sortDescriptors = [sortDescriptor, secondarySortDescriptor]
         request.predicate = NSPredicate(format: "list = %@", self)
         return request
     }()
-    
+        
+    func sortRemindersByDateAndTime() {
+        let sortDescriptor = NSSortDescriptor(key: "reminderDate", ascending: true)
+        let secondarySortDescriptor = NSSortDescriptor(key: "reminderTime", ascending: true)
+        remindersByMyListRequest.sortDescriptors = [sortDescriptor, secondarySortDescriptor]
+        
+    }
 }
+
+
+

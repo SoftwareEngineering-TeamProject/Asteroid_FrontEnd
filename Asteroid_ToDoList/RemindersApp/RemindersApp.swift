@@ -9,7 +9,7 @@ import SwiftUI
 import UserNotifications
 
 @main
-struct RemindersAppApp: App {
+struct RemindersApp: App {
     
     init() {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
